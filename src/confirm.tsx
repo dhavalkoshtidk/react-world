@@ -9,6 +9,12 @@ interface IProps {
 }
 
 class Confirm extends React.Component<IProps> {
+    private handleOkClick = () => {
+        console.log('ok clicked', this.props);
+    }
+    private handleCancelClick = () => {
+        console.log('Cancel clicked', this.props);
+    }
     public render() {
         const { title, content, cancleCaption, okCaption  } = this.props;
         return (
@@ -21,8 +27,8 @@ class Confirm extends React.Component<IProps> {
                 <p>{content}</p>
               </div>
               <div className="confirm-buttons-container">
-                <button className="confirm-cancel">{cancleCaption}</button>
-                <button className="confirm-ok">{okCaption}</button>
+                <button className="confirm-cancel" onClick={this.handleCancelClick} >{cancleCaption}</button>
+                <button className="confirm-ok" onClick={this.handleOkClick}>{okCaption}</button>
               </div>
             </div>
           </div>
