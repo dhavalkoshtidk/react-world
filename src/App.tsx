@@ -11,6 +11,7 @@ function App() {
     cancleCaption: 'No way',
     okCaption: 'Yes please'
   }
+  
   return (
     <div className="App">
       <header className="App-header">
