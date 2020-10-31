@@ -4,7 +4,8 @@ import './App.css';
 import Confirm from './confirm';
 
 interface IState {
-  confirmOpen: boolean
+  confirmOpen: boolean,
+  confirmMessage: string;
 }  
 class  App extends React.Component<{}, IState> {
 
@@ -12,14 +13,21 @@ class  App extends React.Component<{}, IState> {
     super(props);
     this.state = {
      confirmOpen: true,
+     confirmMessage: 'Please hit the confirm button'
     };
    }
   private handleCancelConfirmClick = () => {
     console.log("Cancel clicked");
+    this.setState({ confirmOpen: false,
+                    confirmMessage: "Take a break, I'm sure you will later ..."
+    });
   };
   
   private handleOkConfirmClick = () => {
     console.log("Ok clicked");
+    this.setState({ confirmOpen: true,
+                    confirmMessage: 'Cool, carry on reading!'
+    });
   };
 
 
@@ -50,6 +58,8 @@ class  App extends React.Component<{}, IState> {
           Learn React
         </a>
       </header>
+      <p>{this.state.confirmMessage}</p>
+      <button onClick={this.handleOkConfirmClick}>Confirm</button>
       <Confirm {...confirmProps} />
     </div>
   );
