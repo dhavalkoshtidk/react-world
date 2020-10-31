@@ -2,6 +2,7 @@ import * as React from 'react';
 import './confirm.css'
 
 interface IProps {
+    open: boolean,
     title: string,
     content: string,
     cancleCaption?: string,
@@ -22,7 +23,11 @@ class Confirm extends React.Component<IProps> {
     public render() {
         const { title, content, cancleCaption, okCaption  } = this.props;
         return (
-      <div className="confirm-wrapper confirm-visible">
+      <div className={
+        this.props.open
+          ? "confirm-wrapper confirm-visible"
+          : "confirm-wrapper"
+      }>
             <div className="confirm-container">
               <div className="confirm-title-container">
        <span>{title}</span>
