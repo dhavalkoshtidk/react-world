@@ -5,15 +5,19 @@ interface IProps {
     title: string,
     content: string,
     cancleCaption?: string,
-    okCaption?: string
+    okCaption?: string,
+    onOkClick: () => void,
+    onCancelClick: () => void
 }
 
 class Confirm extends React.Component<IProps> {
     private handleOkClick = () => {
-        console.log('ok clicked', this.props);
+       // console.log('ok clicked', this.props);
+        this.props.onOkClick();
     }
     private handleCancelClick = () => {
-        console.log('Cancel clicked', this.props);
+       // console.log('Cancel clicked', this.props);
+        this.props.onCancelClick();
     }
     public render() {
         const { title, content, cancleCaption, okCaption  } = this.props;

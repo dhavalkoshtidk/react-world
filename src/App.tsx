@@ -5,13 +5,24 @@ import Confirm from './confirm';
 
 function App() {
 
+  const handleCancelConfirmClick = () => {
+    console.log("Cancel clicked");
+  };
+  
+  const handleOkConfirmClick = () => {
+    console.log("Ok clicked");
+  };
+
   const confirmProps = {
     title: 'React and TypeScript',
     content: 'Are you sure you want to learn React and TypeScript?',
     cancleCaption: 'No way',
-    okCaption: 'Yes please'
+    okCaption: 'Yes please',
+    onCancelClick: handleCancelConfirmClick,
+    onOkClick: handleOkConfirmClick
   }
-  
+
+
   return (
     <div className="App">
       <header className="App-header">
