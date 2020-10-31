@@ -4,6 +4,13 @@ import './App.css';
 import Confirm from './confirm';
 
 function App() {
+
+  const confirmProps = {
+    title: 'React and TypeScript',
+    content: 'Are you sure you want to learn React and TypeScript?',
+    cancleCaption: 'No way',
+    okCaption: 'Yes please'
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +27,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <Confirm />
+      <Confirm {...confirmProps} />
     </div>
   );
 }
