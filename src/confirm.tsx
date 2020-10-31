@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './confirm.css'
 
+
+
 interface IProps {
     open: boolean,
     title: string,
@@ -12,6 +14,8 @@ interface IProps {
 }
 
 class Confirm extends React.Component<IProps> {
+
+
     private handleOkClick = () => {
        // console.log('ok clicked', this.props);
         this.props.onOkClick();
